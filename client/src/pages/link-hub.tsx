@@ -49,11 +49,11 @@ export default function LinkHub() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-950/20 to-background">
+    <div className="min-h-screen bg-gradient-to-b from-orange-950/40 via-orange-950/20 to-[#1a0f0a]" style={{ backgroundColor: '#1a0f0a' }}>
       <div className="mx-auto max-w-md">
         {/* Banner Section */}
-        <div className="relative h-[180px] md:h-[220px] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
+        <div className="relative h-[180px] md:h-[220px] overflow-hidden rounded-b-3xl">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent z-10" />
           <img
             src={bannerImage}
             alt="Banner"
@@ -65,7 +65,7 @@ export default function LinkHub() {
         {/* Profile Picture */}
         <div className="relative -mt-[60px] md:-mt-[70px] z-20 flex justify-center px-6">
           <div
-            className="rounded-full border-4 border-white shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+            className="rounded-full border-4 border-white shadow-[0_0_40px_rgba(255,165,0,0.3)]"
             style={{ width: "120px", height: "120px" }}
           >
             <img
@@ -80,19 +80,16 @@ export default function LinkHub() {
         {/* Name and Tagline */}
         <div className="text-center mt-4 px-6">
           <h1
-            className="text-4xl md:text-5xl font-bold text-white"
+            className="text-4xl md:text-5xl font-bold"
             style={{
-              textShadow: "0 2px 10px rgba(0,0,0,0.5)",
-              background: "linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              color: "#ff6b35",
+              textShadow: "0 2px 10px rgba(255,107,53,0.4)",
             }}
             data-testid="text-name"
           >
             {config.name}
           </h1>
-          <p className="text-lg text-foreground/70 mt-2 font-medium" data-testid="text-tagline">
+          <p className="text-lg text-gray-400 mt-2 font-medium" data-testid="text-tagline">
             {config.tagline}
           </p>
         </div>
@@ -105,16 +102,7 @@ export default function LinkHub() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`
-                group block relative overflow-visible rounded-2xl
-                bg-gradient-to-r ${gradientMap[link.id] || "from-gray-700 to-gray-800"}
-                shadow-[0_4px_20px_rgba(0,0,0,0.3)]
-                hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)]
-                hover:scale-[1.02]
-                active:scale-[0.98]
-                transition-all duration-200 ease-in-out
-                min-h-[68px] md:min-h-[72px]
-              `}
+              className="group block relative overflow-visible rounded-2xl bg-[#2a1410] border border-orange-900/30 shadow-[0_4px_20px_rgba(0,0,0,0.4)] hover:shadow-[0_8px_30px_rgba(255,107,53,0.2)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 ease-in-out min-h-[68px] md:min-h-[72px]"
               style={{
                 animation: `fadeInUp 0.5s ease-out ${index * 0.1}s backwards`,
               }}
@@ -123,7 +111,7 @@ export default function LinkHub() {
               <div className="relative flex items-center justify-between p-4 h-full">
                 {/* Icon */}
                 <div className="flex items-center gap-4 flex-1">
-                  <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+                  <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-xl bg-black/30 p-2 flex items-center justify-center">
                     <img
                       src={iconMap[link.icon]}
                       alt={`${link.title} icon`}
@@ -137,7 +125,7 @@ export default function LinkHub() {
                     <div className="text-white font-semibold text-lg md:text-xl" data-testid={`text-title-${link.id}`}>
                       {link.title}
                     </div>
-                    <div className="text-white/70 text-sm mt-0.5" data-testid={`text-subscribers-${link.id}`}>
+                    <div className="text-gray-400 text-sm mt-0.5" data-testid={`text-subscribers-${link.id}`}>
                       {link.subscribers}
                     </div>
                   </div>
@@ -145,12 +133,12 @@ export default function LinkHub() {
 
                 {/* External Link Icon */}
                 <div className="flex-shrink-0 ml-2">
-                  <ExternalLink className="w-5 h-5 text-white/60 group-hover:text-white transition-colors" data-testid={`icon-external-${link.id}`} />
+                  <ExternalLink className="w-5 h-5 text-orange-500/70 group-hover:text-orange-400 transition-colors" data-testid={`icon-external-${link.id}`} />
                 </div>
               </div>
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 rounded-2xl transition-colors pointer-events-none" />
+              <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 rounded-2xl transition-colors pointer-events-none" />
             </a>
           ))}
         </div>
