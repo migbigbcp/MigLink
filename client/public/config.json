@@ -1,0 +1,34 @@
+{
+  "name": "Migbig",
+  "tagline": "Rejoins-moi sur mes réseaux !",
+  "links": [
+    {
+      "id": "youtube",
+      "title": "Chaîne YouTube",
+      "url": "https://www.youtube.com/@MigbigBS",
+      "subscribers": "83.2k abonnés",
+      "icon": "youtube"
+    },
+    {
+      "id": "tiktok-main",
+      "title": "TikTok Principal",
+      "url": "https://www.tiktok.com/@migbigbs",
+      "subscribers": "10k abonnés",
+      "icon": "tiktok"
+    },
+    {
+      "id": "tiktok-edit",
+      "title": "TikTok Edit",
+      "url": "https://www.tiktok.com/@migbigedit",
+      "subscribers": "1K abonnés",
+      "icon": "tiktok-edit"
+    },
+    {
+      "id": "discord",
+      "title": "Serveur Discord",
+      "url": "https://discord.gg/yHSyrMx2vV",
+      "subscribers": "1900 membres",
+      "icon": "discord"
+    }
+  ]
+}
